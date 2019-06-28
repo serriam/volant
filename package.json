@@ -1,0 +1,53 @@
+{
+    "name": "volant-courier",
+    "version": "1.0.0",
+    "description": "a delivery app that adheres to speed and urgency. Offices suited at prosperity towers, westlands. Founders Victor Migot Odoyo and Job Oyagi",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^6.1.0",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-imagemin": "^6.0.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-util": "^3.0.8"
+    },
+    "dependencies": {
+        "del": "^4.1.1",
+        "gulp-cache": "^1.1.2",
+        "gulp-csscomb": "^3.0.8",
+        "gulp-cssnano": "^2.1.3",
+        "gulp-html-prettify": "0.0.1",
+        "gulp-npm-dist": "^1.0.3",
+        "gulp-postcss": "^8.0.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-run": "^1.7.1",
+        "gulp-uglify": "^3.0.2",
+        "gulp-useref-plus": "0.0.8",
+        "gulp-wait": "0.0.2",
+        "jquery": "^3.4.1",
+        "postcss-flexbugs-fixes": "^4.1.0",
+        "pump": "^3.0.0",
+        "run-sequence": "^2.2.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/serriam/volant-courier.git"
+    },
+    "keywords": [
+        "delivery",
+        "volant-courier",
+        "parcels",
+        "packages",
+        "delivery"
+    ],
+    "author": "serria steve",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/serriam/volant-courier/issues"
+    },
+    "homepage": "https://github.com/serriam/volant-courier#readme"
+}
