@@ -26,6 +26,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @auth
+        <script src="{{ asset('js/enable-push.js') }}" defer></script>
+    @endauth
 </head>
 <body>
   <div id="app">

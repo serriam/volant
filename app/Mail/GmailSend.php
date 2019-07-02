@@ -21,12 +21,14 @@ class GmailSend extends Mailable
     public $_name;
     public $_time;
     public $_price;
+    public $_edit_info;
 
-    public function __construct($name, $time, $price)
+    public function __construct($name, $time, $price, $edit_info)
     {
        $this->_name = $name;
        $this->_time = $time;
        $this->_price = $price;
+       $this->_edit_info = $edit_info;
     }
     /**
      * Build the message.
@@ -45,6 +47,7 @@ class GmailSend extends Mailable
                 'title' => $this->_name,
                 'time' =>  $this->_time,
                 'price' =>  $this->_price,
+                'edit_info' => $this->_edit_info,
                 'link' => 'http://www.volantcourier.com'
             ]);
     }

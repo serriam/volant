@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 // use App\Notifications\StoreResetPasswordNotification;
 use Illuminate\Database\Eloquent\Model;
+// use NotificationChannels\WebPush\HasPushSubscriptions;
 // use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
 class Admins extends Authenticatable

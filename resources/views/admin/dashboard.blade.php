@@ -22,6 +22,10 @@
     <!-- Argon CSS -->
     <link type="text/css" href="assets2/css/argon.css?v=1.0.0" rel="stylesheet">
 
+    {{-- @auth
+        <script src="{{ asset('js/enable-push.js') }}" defer></script>
+    @endauth --}}
+
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),

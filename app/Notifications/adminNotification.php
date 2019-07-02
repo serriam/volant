@@ -4,6 +4,8 @@ namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
+use NotificationChannels\WebPush\WebPushMessage;
+use NotificationChannels\WebPush\WebPushChannel;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 // use Illuminate\Notifications\Messages\BroadcastMessage;
@@ -61,5 +63,14 @@ class adminNotification extends Notification
         return [
             'order_id' => $this->details['order_id']
         ];
+    }
+
+     public function toWebPush($notifiable, $notification)
+    {
+        return (new WebPushMessage)
+            ->title('I\'m Notification Title')
+            ->icon('/notification-icon.png')
+            ->body('Great, Push Notifications work!')
+            ->action('View App', 'notification_action');
     }
 }

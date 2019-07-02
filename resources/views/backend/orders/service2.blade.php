@@ -140,55 +140,68 @@
   </nav>
 
 
-  <div class="panel-header panel-header-md">
-    <div class="container">
-     @include('backend.includes.messages')
-   </div>
- </div>
- <div class="content">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h4 class="card-title"> My Orders </h4>
-          <a href="{{ route('orders.create') }}" class="btn btn-info pull-right" >Create Order</a>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table">
-              <thead class="text-primary" style="font-size: 12px;" >
-                <th>To:</th>
-                <th>From:</th>
-                <th>Package</th>
-                <th>Amount</th>
-                <th>Time</th>
-                <th>Instructions</th>
-                <th>Edit</th>
-                <th>Delete</th>
-              </thead>
-              <tbody style="font-size:12px;">
-                @foreach($order as $orders)
-                <tr>
-                  <td>{{ $orders->to }}</td>
-                  <td>{{ $orders->from }}</td>
-                  <td>{{ $orders->package }}</td>
-                  <td>{{ $orders->info }}</td>
-                  <td>{{ $orders->time }}</td>
-                  <td>{{ $orders->instruct }}</td>
-                  <td>
-                    <a href="{{ route('orders.edit', $orders->id) }}" class="btn btn-sm btn-info">Edit</a>
-                  </td>
+  <div class="panel-header panel-header-sm">
+  </div>
+  <div class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title"> Add extra information </h4>
 
-                  <td>
-                      <button onclick="deleteorder2({{ $orders->id }})" class="btn btn-sm btn-danger">Delete</button>
-                  </td>
+          </div>
+          <div class="card-body">
+           <div class="col-lg-12 card">
+            <div class="card-body"> 
+              <p id="express-name">{{ $order->package }}</p>
+              <div>
+                <small><strong>Amount:</strong></small>
+                <span id="express-amount" class="badge badge-pill badge-info">{{ $order->info }}</span>
+              </div>
+              <div>
+                <small><strong>Delivery Time:</strong></small>
+                <span id="express-time" class="badge badge-pill badge-warning">{{ $order->time }}</span>
+              </div>
 
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
-            <div class="text-center">
-              {!! $order->links(); !!}
+            </div>
+          </div>
+
+          <div class="col-lg-12 card">
+            <div class="card-body">
+               {!! Form::model($order, ['route' => ['orders.update2', $order->id], 'method' => 'POST']) !!}
+                  <div class="row">
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" required name="email" class="form-control" placeholder="Email" >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label for="Instructions">Further Instructions</label>
+                        <textarea class="form-control" required name="instruct" placeholder="Further Instructions"></textarea>
+                      </div>
+                    </div>
+                  </div>
+           
+
+                    <div class="col-md-4 pl-1">
+                      <div class="row">
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                          <button type="submit" class="form-control btn btn-info" >Edit the Order</button>
+                        </div>
+                         </div>
+                       
+                      </div>
+                    </div>
+                  </div>
+                 
+                {!! Form::close() !!}
+              </div>
             </div>
           </div>
         </div>
@@ -200,47 +213,5 @@
 
 </div>
 </div>
-
-<script>
-
-                function deleteorder2(id){
-                    var id = id;
-                    
-                         swal({
-                          title: "Are you sure?",
-                          text: "Once deleted, you will not be able to recover this order!",
-                          icon: "warning",
-                          buttons: true,
-                          dangerMode: true,
-                            })
-                         .then((willDelete) => {
-                          if (willDelete) {
-                           jQuery.ajax({
-                        url:'{{ route('orders.deleteorder2') }}',
-                        method:"POST",
-                        data:{id: id, _token: '{{csrf_token()}}'},
-                        success:function(result)
-                        {
-                             swal(result, "has been deleted!", {
-                              icon: "success",
-                          }).then(function(){ 
-                             location.reload();
-                         }
-                         );
-                        },
-                        error : function(){alert("Something Went Wrong.");},
-                    });
-                      } else {
-                        swal("Order is safe!").then(function(){ 
-                             location.reload();
-                         }
-                         );
-                    }
-                });
-            }
-
-                // swal(result, "has been confirmed successfully!", "success")
-
-            </script>
 
 @endsection

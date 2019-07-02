@@ -18,6 +18,8 @@
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
 <script src="/js/parsley.min.js"></script>
 <script src="/back/demo/demo.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script>
  function myMap() {
   var mapProp= {

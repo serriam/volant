@@ -22,12 +22,20 @@ Route::group(['middleware' => ['web']], function(){
 
 	Route::post('orders/distance', 'orderController@distance')->name('orders.distance');
 	Route::post('orders/serve', 'orderController@service')->name('orders.serve');
+	Route::post('orders/serve2', 'orderController@service2')->name('orders.serve2');
 	Route::get('/service/{id}', 'orderController@serve');
-	Route::post('orders/confirm', 'orderController@confirm')->name('orders.confirm');
-	Route::post('orders/deleteorder', 'orderController@deleteorder')->name('orders.deleteorder');
+	Route::get('/service2/{id}', 'orderController@serve2');
+	Route::post('/orders/update2/{id}', 'orderController@update2')->name('orders.update2');
+	Route::post('orders/deleteorder2', 'orderController@deleteorder2')->name('orders.deleteorder2');
 });
 
 Auth::routes();
+
+// Route::post('/push','PushController@store')->name('push');
+// Route::get('/push','PushController@push')->name('push');
+
+Route::post('orders/confirm', 'AdminController@confirm')->name('orders.confirm');
+Route::post('orders/deleteorder', 'AdminController@deleteorder')->name('orders.deleteorder');
 
 Route::get('send', 'AdminController@sendNotification');
 

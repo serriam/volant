@@ -1,4 +1,4 @@
-@extends('backend.mainback2')
+@extends('backend.mainback')
 
 @section('title', '| Volant Courier ')
 

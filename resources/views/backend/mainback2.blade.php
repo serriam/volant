@@ -225,11 +225,12 @@
                       var time = $("#skater-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -246,11 +247,12 @@
                       var time = $("#express-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -267,11 +269,12 @@
                       var time = $("#pickup-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -288,11 +291,12 @@
                       var time = $("#van-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -309,11 +313,12 @@
                       var time = $("#3-Tonne-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -330,11 +335,12 @@
                       var time = $("#5-Tonne-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -351,11 +357,12 @@
                       var time = $("#10-Tonne-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                      
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/services/"+data;
                         },
@@ -372,11 +379,12 @@
                       var time = $("#28-Tonne-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -397,13 +405,14 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
+                        var id = $("#id").val();
 
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -421,13 +430,14 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
+                        var id = $("#id").val();
 
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -445,13 +455,14 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
+                        var id = $("#id").val();
 
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -469,13 +480,14 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
+                        var id = $("#id").val();
 
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -493,13 +505,14 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
+                        var id = $("#id").val();
 
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -516,13 +529,14 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
+                        var id = $("#id").val();
 
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -540,13 +554,14 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
+                        var id = $("#id").val();
 
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -564,13 +579,14 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
+                        var id = $("#id").val();
 
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -588,13 +604,13 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
-
+                        var id = $("#id").val();
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
                         url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
@@ -612,15 +628,16 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
+                        var id = $("#id").val();
 
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
+                        url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -635,15 +652,15 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
-
+                        var id = $("#id").val();
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
+                        url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -659,15 +676,15 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
-
+                        var id = $("#id").val();
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
+                        url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -683,15 +700,15 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
-
+                        var id = $("#id").val();
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
+                        url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -707,15 +724,15 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
-
+                        var id = $("#id").val();
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
+                        url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -731,15 +748,16 @@
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
+                        var id = $("#id").val();
 
                         // console.log(amount+name+time);
                       
                       jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
+                        url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -753,13 +771,14 @@
                       var time = $("#movers-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
+                        url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -774,13 +793,14 @@
                       var time = $("#dedicated-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
+                        url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -795,13 +815,14 @@
                       var time = $("#good-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
+                        url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -816,13 +837,14 @@
                       var time = $("#delivery-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
+                        url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -837,13 +859,14 @@
                       var time = $("#pick-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
+                      var id = $("#id").val();
                       
                       jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
+                        url: '{{ route('orders.serve2') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://127.0.0.1:8000/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');

@@ -1,4 +1,4 @@
-@extends('backend.mainback')
+@extends('backend.mainback2')
 
 @section('title', '| Volant Courier ')
 
@@ -275,6 +275,7 @@
                   To :
                   <span id="to" style="color: #fff" class="badge badge-success badge-pill"></span>
                 </li>
+                <input type="hidden" id="id" name="id" required value="{{ $order->id }}" name="id">
               </ul>
             </div>
 

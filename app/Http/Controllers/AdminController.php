@@ -42,4 +42,23 @@ class AdminController extends Controller
 
         return view('admin.latest')->withorderm($orderm)->withordercount($ordercount)->withusercount($usercount)->withncount($ncount);
     }
+
+    public function confirm(Request $request){
+        
+        $order = orders::find($request->id);
+
+        $order->mark = $request->mark;
+
+        $order->save();
+
+        return $order->package;
+    }
+
+    public function deleteorder(Request $request){
+        $order = orders::find($request->id);
+
+        $order->delete();
+
+        return $order->package;
+    }
 }

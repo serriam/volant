@@ -16,6 +16,8 @@ use App\Notifications\adminNotification;
 class orderController extends Controller
 {
 
+    // use PushN;
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -46,6 +48,12 @@ class orderController extends Controller
 
         $order = orders::find($id);
         return view('backend.orders.service')->withorder($order);
+    }
+
+    public function serve2($id){
+
+        $order = orders::find($id);
+        return view('backend.orders.service2')->withorder($order);
     }
 
     /**
@@ -92,42 +100,40 @@ class orderController extends Controller
 
     }
 
-    public function store(Request $request)
-    {
+    public function service2(Request $request){
 
-        dd($request);
+        // dd($request);
 
-         $this->validate($request, array(
-            'company' => 'required|max:255',
-            'email' => 'required|max:255',
-            'first' => 'required|max:255',
-            'last' => 'required|max:255',
-            'address' => 'required|max:255',
-            'city' => 'required|max:255',
-            'postcode' => 'required|max:255',
-        ));
+        $name = $request->get('name');
+        $amount = $request->get('amount');
+        $time = $request->get('time');
+        $to = $request->get('to');
+        $from = $request->get('from');
+        $id = $request->get('id');
+        
+        // $count = strlen($amount);
 
+        // if ($count > 8) {
+            
+        // }else{
+        //     $newAmount = substr($amount, -3);
 
+        // }
 
-        $order = new orders;
+        // dd($newAmount);
 
-        //
+        $order = orders::find($id);
 
-        $order->company = $request->company;
-        $order->firstname = $request->first;
-        $order->lastname = $request->last;
-        $order->email = $request->email;
-        $order->address = $request->address;
-        $order->city = $request->city;
-        $order->postcode = $request->postcode;
-
-        Mail::to($order->email)->send(new GmailSend($order->firstname));
+        $order->to = $to;
+        $order->from = $from;
+        $order->package = $name;
+        $order->info = $amount;
+        $order->time = $time;
 
         $order->save();
 
-        session::flash('success', 'The order was successfully saved!');
-
-        return redirect()->route('orders.show', $order->id);
+        
+        return $order->id;
 
     }
 
@@ -178,8 +184,10 @@ class orderController extends Controller
         $order->instruct = $request->instruct;
         $order->mark = 0;
         $order->email = $request->email;
+
+        $edit_info = "";
        
-        Mail::to($request->email)->send(new GmailSend($order->package, $order->time, $order->info));
+        Mail::to($request->email)->send(new GmailSend($order->package, $order->time, $order->info, $edit_info));
 
         $data = array( 
             'id' => $order->id,
@@ -204,6 +212,8 @@ class orderController extends Controller
             'actionURL' => url('/'),
             'order_id' => $data['id']
         ];
+
+        // $this->push();
   
         Notification::send($user, new adminNotification($details));
 
@@ -214,19 +224,61 @@ class orderController extends Controller
         return redirect()->route('orders.index');
     }
 
-
-    public function confirm(Request $request){
+    public function update2(Request $request, $id)
+    {
         
-        $order = orders::find($request->id);
+        $order = orders::find($id);
 
-        $order->mark = $request->mark;
+              // dd($request);
+
+         $this->validate($request, array(
+            'email' => 'required|max:255',
+            'instruct' => 'required|max:255',
+        ));
+        // dd($order);
+        
+        $order->instruct = $request->instruct;
+        $order->mark = 0;
+        $order->email = $request->email;
+
+        $edit_info = "You have successfully Edited this order";
+       
+        Mail::to($request->email)->send(new GmailSend($order->package, $order->time, $order->info, $edit_info));
+
+        $data = array( 
+            'id' => $order->id,
+            'to' => $order->to,
+            'from' => $order->from,
+            'package' => $order->package,
+            'charge' => $order->info,
+            'time' => $order->time,
+            'email' => $request->email,
+            'intructions' => $request->intruct 
+        );
+
+        // dd($data);
+
+        $user = User::first();
+  
+        $details = [
+            'greeting' => 'Hi Admin',
+            'body' => $data['email'].' Edited this order'.' details are as follows'.' to: '.$data['to'].' from: '.$data['from'].' package name: '.$data['package'],
+            'thanks' => 'Thank you for using volantcourier.com!',
+            'actionText' => 'View this Site',
+            'actionURL' => url('/'),
+            'order_id' => $data['id']
+        ];
+  
+        Notification::send($user, new adminNotification($details));
 
         $order->save();
 
-        return $order->package;
+        session::flash('success', 'The order was successfully edited!');
+
+        return redirect()->route('orders.index');
     }
 
-    public function deleteorder(Request $request){
+    public function deleteorder2(Request $request){
         $order = orders::find($request->id);
 
         $order->delete();
