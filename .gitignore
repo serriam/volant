@@ -1,17 +1,17 @@
 <<<<<<< HEAD
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-.env
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+# /node_modules
+# /public/hot
+# /public/storage
+# /storage/*.key
+# /vendor
+# .env
+# .phpunit.result.cache
+# Homestead.json
+# Homestead.yaml
+# npm-debug.log
+# yarn-error.log
 =======
-vendor/
+# vendor/
 node_modules/
 npm-debug.log
 
