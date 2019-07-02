@@ -24,158 +24,160 @@
 
     {{-- @auth
         <script src="{{ asset('js/enable-push.js') }}" defer></script>
-    @endauth --}}
+        @endauth --}}
 
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-            ]) !!};
-        </script>
-    </head>
-    <body class="{{ $class ?? '' }}">
-        <div id="app">
+        <script>
+            window.Laravel = {!! json_encode([
+                'csrfToken' => csrf_token(),
+                ]) !!};
+            </script>
+        </head>
+        <body class="{{ $class ?? '' }}">
+            <div id="app">
 
-            @auth()
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-            @include('layouts.navbars.sidebar')
-            @endauth
+                @auth()
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                @include('layouts.navbars.sidebar')
+                @endauth
 
-            <div class="main-content">
-                @include('layouts.navbars.navbar')
-                @include('layouts.headers.cards')
+                <div class="main-content">
+                    @include('layouts.navbars.navbar')
+                    @include('layouts.headers.cards')
 
-                <div class="container-fluid mt--7">
-                    <div class="row mt-5">
-                        <div class="col-xl-12 mb-5 mb-xl-0">
-                            <div class="card shadow">
-                                <div class="card-header border-0">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h3 class="mb-0">All Orders</h3>
-                                        </div>
-                                        <div class="col text-right">
-                                            {{-- <a href="#!" class="btn btn-sm btn-primary">See all</a> --}}
+                    <div class="container-fluid mt--7">
+                        <div class="row mt-5">
+                            <div class="col-xl-12 mb-5 mb-xl-0">
+                                <div class="card shadow">
+                                    <div class="card-header border-0">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+
+                                                <h3 class="mb-0">All Orders<div id="demo"></div></h3>
+                                            </div>
+                                            <div class="col text-right">
+                                                {{-- <a href="#!" class="btn btn-sm btn-primary">See all</a> --}}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <!-- Projects table -->
-                                    <table class="table align-items-center table-flush">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th scope="col">email</th>
-                                                <th scope="col">to</th>
-                                                <th scope="col">from</th>
-                                                <th scope="col">package</th>
-                                                <th scope="col">charge</th>
-                                                <th scope="col">time</th>
-                                                <th scope="col">instructions</th>
-                                                <th scope="col">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach($order as $orders)
-                                            <tr>
-                                                <th scope="row">
-                                                    {{ $orders->email }}
-                                                </th>
-                                                <th scope="row">
-                                                    {{ $orders->to }}
-                                                </th>
-                                                <td>
-                                                    {{ $orders->from }}
-                                                </td>
-                                                <td>
-                                                    {{ $orders->package }}
-                                                </td>
-                                                <td>
-                                                    {{ $orders->info }}
-                                                </td>
-                                                <td>
-                                                    {{ $orders->time }}
-                                                </td>
-                                                <td>
-                                                    {{ $orders->instruct }}
-                                                </td>
-                                                <td>
-                                                    <button onclick="deleteorder({{ $orders->id }})" class="btn btn-sm btn-danger">Delete</button>
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                    <div class="table-responsive">
+                                        <!-- Projects table -->
+                                        <table class="table align-items-center table-flush">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th scope="col">email</th>
+                                                    <th scope="col">to</th>
+                                                    <th scope="col">from</th>
+                                                    <th scope="col">package</th>
+                                                    <th scope="col">charge</th>
+                                                    <th scope="col">time</th>
+                                                    <th scope="col">instructions</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($order as $orders)
+                                                <tr>
+                                                    <th scope="row">
+                                                        {{ $orders->email }}
+                                                    </th>
+                                                    <th scope="row">
+                                                        {{ $orders->to }}
+                                                    </th>
+                                                    <td>
+                                                        {{ $orders->from }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $orders->package }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $orders->info }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $orders->time }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $orders->instruct }}
+                                                    </td>
+                                                    <td>
+                                                        <button onclick="deleteorder({{ $orders->id }})" class="btn btn-sm btn-danger">Delete</button>
+                                                        
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        @include('layouts.footers.auth')
                     </div>
-
-                    @include('layouts.footers.auth')
                 </div>
-            </div>
 
-            <script>
+                <script>
 
-                function deleteorder(id){
-                    var id = id;
-                    
-                         swal({
+                    function deleteorder(id){
+                        var id = id;
+
+                        swal({
                           title: "Are you sure?",
                           text: "Once deleted, you will not be able to recover this order!",
                           icon: "warning",
                           buttons: true,
                           dangerMode: true,
-                            })
-                         .then((willDelete) => {
+                      })
+                        .then((willDelete) => {
                           if (willDelete) {
                            jQuery.ajax({
-                        url:'{{ route('orders.deleteorder') }}',
-                        method:"POST",
-                        data:{id: id, _token: '{{csrf_token()}}'},
-                        success:function(result)
-                        {
+                            url:'{{ route('orders.deleteorder') }}',
+                            method:"POST",
+                            data:{id: id, _token: '{{csrf_token()}}'},
+                            success:function(result)
+                            {
                              swal(result, "has been deleted!", {
                               icon: "success",
                           }).then(function(){ 
                              location.reload();
                          }
                          );
-                        },
-                        error : function(){alert("Something Went Wrong.");},
-                    });
-                      } else {
+                      },
+                      error : function(){alert("Something Went Wrong.");},
+                  });
+                       } else {
                         swal("Order is safe!").then(function(){ 
-                             location.reload();
-                         }
-                         );
+                         location.reload();
+                     }
+                     );
                     }
                 });
-            }
+                    }
 
                 // swal(result, "has been confirmed successfully!", "success")
 
             </script>
 
-            @push('js')
-            <script src="assets2/vendor/chart.js/dist/Chart.min.js"></script>
-            <script src="assets2/vendor/chart.js/dist/Chart.extension.js"></script>
-            @endpush
-        </div>
+@push('js')
+<script src="assets2/vendor/chart.js/dist/Chart.min.js"></script>
+<script src="assets2/vendor/chart.js/dist/Chart.extension.js"></script>
+@endpush
+</div>
 
-        @guest()
-        @include('layouts.footers.guest')
-        @endguest
+@guest()
+@include('layouts.footers.guest')
+@endguest
 
-        <script src="assets2/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="assets2/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        
-        @stack('js')
-        
-        <!-- Argon JS -->
-        <script src="assets2/js/argon.js?v=1.0.0"></script>
+<script src="assets2/vendor/jquery/dist/jquery.min.js"></script>
+<script src="assets2/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-        {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
-    </body>
-    </html>
+@stack('js')
+
+<!-- Argon JS -->
+<script src="assets2/js/argon.js?v=1.0.0"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+{{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+</body>
+</html>

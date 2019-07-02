@@ -30,6 +30,9 @@ class AdminController extends Controller
         $ordercount = orders::orderBy('id', 'desc')->count();
         $usercount = User::orderBy('id', 'desc')->count();
         $ncount = orders::where('mark', '=', 0)->get()->count();
+
+        
+
         return view('admin.dashboard')->withorder($order)->withordercount($ordercount)->withusercount($usercount)->withncount($ncount)->withorderm($orderm);
     }
 

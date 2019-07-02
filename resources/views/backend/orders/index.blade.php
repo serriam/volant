@@ -150,6 +150,15 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
+          {{-- <?php 
+          $now = date("Y-m-d H:m:s");
+          $hours = '5 hours';
+          $new_time = date("Y-m-d H:i:s", strtotime(sprintf("+%d hours", $hours)));
+
+          var_dump($now);
+          ?> --}}
+          {{-- <p id="time" style="display: hidden;"><?= $new_time ?></p> --}}
+          <div id="demo"></div>
           <h4 class="card-title"> My Orders </h4>
           <a href="{{ route('orders.create') }}" class="btn btn-info pull-right" >Create Order</a>
         </div>
@@ -180,7 +189,7 @@
                   </td>
 
                   <td>
-                      <button onclick="deleteorder2({{ $orders->id }})" class="btn btn-sm btn-danger">Delete</button>
+                    <button onclick="deleteorder2({{ $orders->id }})" class="btn btn-sm btn-danger">Delete</button>
                   </td>
 
                 </tr>
@@ -203,44 +212,44 @@
 
 <script>
 
-                function deleteorder2(id){
-                    var id = id;
-                    
-                         swal({
-                          title: "Are you sure?",
-                          text: "Once deleted, you will not be able to recover this order!",
-                          icon: "warning",
-                          buttons: true,
-                          dangerMode: true,
-                            })
-                         .then((willDelete) => {
-                          if (willDelete) {
-                           jQuery.ajax({
-                        url:'{{ route('orders.deleteorder2') }}',
-                        method:"POST",
-                        data:{id: id, _token: '{{csrf_token()}}'},
-                        success:function(result)
-                        {
-                             swal(result, "has been deleted!", {
-                              icon: "success",
-                          }).then(function(){ 
-                             location.reload();
-                         }
-                         );
-                        },
-                        error : function(){alert("Something Went Wrong.");},
-                    });
-                      } else {
-                        swal("Order is safe!").then(function(){ 
-                             location.reload();
-                         }
-                         );
-                    }
-                });
-            }
+  function deleteorder2(id){
+    var id = id;
+
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this order!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+       jQuery.ajax({
+        url:'{{ route('orders.deleteorder2') }}',
+        method:"POST",
+        data:{id: id, _token: '{{csrf_token()}}'},
+        success:function(result)
+        {
+         swal(result, "has been deleted!", {
+          icon: "success",
+        }).then(function(){ 
+         location.reload();
+       }
+       );
+      },
+      error : function(){alert("Something Went Wrong.");},
+    });
+     } else {
+      swal("Order is safe!").then(function(){ 
+       location.reload();
+     }
+     );
+    }
+  });
+  }
 
                 // swal(result, "has been confirmed successfully!", "success")
 
-            </script>
+              </script>
 
-@endsection
+              @endsection

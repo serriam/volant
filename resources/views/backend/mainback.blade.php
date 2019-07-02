@@ -20,25 +20,67 @@
 <script src="/back/demo/demo.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-<script>
- function myMap() {
-  var mapProp= {
-    center:new google.maps.LatLng(-1.28333,36.81667),
-    zoom:12,
-  };
-  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-  var card = document.getElementById('pac-card');
-  var input = document.getElementById('pac-input');
-  var input2 = document.getElementById('pac-input2');
+{{-- <script type="text/javascript">
+  var time1 = $('#time').text();
 
-  var types = document.getElementById('type-selector');
-  var strictBounds = document.getElementById('strict-bounds-selector');
+  // var dt = new Date();
+  //        document.write("Current Date: "+dt);
+  //        dt.setHours(dt.getHours() + 2);
+  //        dt.setMinutes(dt.getMinutes() + 20);
 
-  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+  // console.log(dt);
 
-  var autocomplete = new google.maps.places.Autocomplete(input);
-  var autocomplete2 = new google.maps.places.Autocomplete(input2);
+  console.log(time1);
+                // Set the date we're counting down to
+                var countDownDate = new Date(time1).getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+
+                  // Get today's date and time
+                  var now = new Date().getTime();
+
+                  // Find the distance between now and the count down date
+                  var distance = countDownDate - now;
+
+                  // Time calculations for days, hours, minutes and seconds
+                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                  // Display the result in the element with id="demo"
+                  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                  + minutes + "m " + seconds + "s ";
+
+                  // If the count down is finished, write some text 
+                  if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                  }
+                }, 1000);
+              </script> --}}
+
+              <script>
+               function myMap() {
+                var mapProp= {
+                  center:new google.maps.LatLng(-1.28333,36.81667),
+                  zoom:12,
+                };
+                var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+                var card = document.getElementById('pac-card');
+                var input = document.getElementById('pac-input');
+                var input2 = document.getElementById('pac-input2');
+
+                var types = document.getElementById('type-selector');
+                var strictBounds = document.getElementById('strict-bounds-selector');
+
+                map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+
+                var autocomplete = new google.maps.places.Autocomplete(input);
+                var autocomplete2 = new google.maps.places.Autocomplete(input2);
                       // console.log(autocomplete2);
 
                       // Bind the map's bounds (viewport) property to the autocomplete object,
@@ -197,7 +239,7 @@
                         }else{
                           var distance = response.rows[0].elements[0].distance;
                           var duration = response.rows[0].elements[0].duration;
-                          console.log(response.rows[0].elements[0].distance);
+                          // console.log(response.rows[0].elements[0].distance);
                           var distance_in_kilo = distance.value / 1000;
                           var distance_in_mile = distance.value / 1609.34;
                           var duration_text = duration.text;
@@ -208,6 +250,14 @@
                           $('#duration_value').text(duration_value);
                           $('#from').text(origin);
                           $('#to').text(destination);
+
+                          // var myTruncatedString = duration_value.substring(0, 4);
+                          // console.log(myTruncatedString);
+
+                          // var dt = new Date();
+                          // document.write("Current Date: "+dt);
+                          // dt.setHours(dt.getHours() + 2);
+                          // dt.setMinutes(dt.getMinutes() + 20);
 
                         }
                       }
@@ -220,8 +270,8 @@
 
                   </script>
 
-                   <script>
-                      $("#skater").click(function(){
+                  <script>
+                    $("#skater").click(function(){
                       var name = $("#skater-name").text();
                       var amount = $("#skater-amount").text();
                       var time = $("#skater-time").text();
@@ -240,9 +290,9 @@
                         }
                       });
 
-                      });
+                    });
 
-                      $("#express").click(function(){
+                    $("#express").click(function(){
                       var name = $("#express-name").text();
                       var amount = $("#express-amount").text();
                       var time = $("#express-time").text();
@@ -261,9 +311,9 @@
                         }
                       });
 
-                      });
+                    });
 
-                      $("#pickup").click(function(){
+                    $("#pickup").click(function(){
                       var name = $("#pickup-name").text();
                       var amount = $("#pickup-amount").text();
                       var time = $("#pickup-time").text();
@@ -282,9 +332,9 @@
                         }
                       });
 
-                      });
+                    });
 
-                      $("#van").click(function(){
+                    $("#van").click(function(){
                       var name = $("#van-name").text();
                       var amount = $("#van-amount").text();
                       var time = $("#van-time").text();
@@ -303,9 +353,9 @@
                         }
                       });
 
-                      });
+                    });
 
-                      $("#3-Tonne").click(function(){
+                    $("#3-Tonne").click(function(){
                       var name = $("#3-Tonne-name").text();
                       var amount = $("#3-Tonne-amount").text();
                       var time = $("#3-Tonne-time").text();
@@ -324,9 +374,9 @@
                         }
                       });
 
-                      });
+                    });
 
-                      $("#5-Tonne").click(function(){
+                    $("#5-Tonne").click(function(){
                       var name = $("#5-Tonne-name").text();
                       var amount = $("#5-Tonne-amount").text();
                       var time = $("#5-Tonne-time").text();
@@ -345,15 +395,15 @@
                         }
                       });
 
-                      });
+                    });
 
-                      $("#10-Tonne").click(function(){
+                    $("#10-Tonne").click(function(){
                       var name = $("#10-Tonne-name").text();
                       var amount = $("#10-Tonne-amount").text();
                       var time = $("#10-Tonne-time").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                     
+
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
@@ -366,9 +416,9 @@
                         }
                       });
 
-                      });
+                    });
 
-                      $("#28-Tonne").click(function(){
+                    $("#28-Tonne").click(function(){
                       var name = $("#28-Tonne-name").text();
                       var amount = $("#28-Tonne-amount").text();
                       var time = $("#28-Tonne-time").text();
@@ -387,369 +437,369 @@
                         }
                       });
 
-                      });
+                    });
 
-                      
-                      
 
-                      $("#medium-amount1").click(function(){
-                        var amount = $("#medium-amount1").text();
-                        var name = $("#medium-name").text();
-                        var time = $("#medium-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
 
-                        // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
-                      });
 
-                      $("#medium-amount2").click(function(){
-                        var amount = $("#medium-amount2").text();
-
-                        var name = $("#medium-name").text();
-                        var time = $("#medium-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                    $("#medium-amount1").click(function(){
+                      var amount = $("#medium-amount1").text();
+                      var name = $("#medium-name").text();
+                      var time = $("#medium-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#medium-amount3").click(function(){
-                        var amount = $("#medium-amount3").text();
+                    $("#medium-amount2").click(function(){
+                      var amount = $("#medium-amount2").text();
 
-                        var name = $("#medium-name").text();
-                        var time = $("#medium-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                      var name = $("#medium-name").text();
+                      var time = $("#medium-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#medium-amount4").click(function(){
-                        var amount = $("#medium-amount4").text();
+                    $("#medium-amount3").click(function(){
+                      var amount = $("#medium-amount3").text();
 
-                        var name = $("#medium-name").text();
-                        var time = $("#medium-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                      var name = $("#medium-name").text();
+                      var time = $("#medium-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#medium-amount5").click(function(){
-                        var amount = $("#medium-amount5").text();
+                    $("#medium-amount4").click(function(){
+                      var amount = $("#medium-amount4").text();
 
-                        var name = $("#medium-name").text();
-                        var time = $("#medium-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                      var name = $("#medium-name").text();
+                      var time = $("#medium-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#door-amount1").click(function(){
-                        var amount = $("#door-amount1").text();
-                        var name = $("#door-name").text();
-                        var time = $("#door-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                    $("#medium-amount5").click(function(){
+                      var amount = $("#medium-amount5").text();
+
+                      var name = $("#medium-name").text();
+                      var time = $("#medium-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#door-amount2").click(function(){
-                        var amount = $("#door-amount2").text();
-
-                        var name = $("#door-name").text();
-                        var time = $("#door-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                    $("#door-amount1").click(function(){
+                      var amount = $("#door-amount1").text();
+                      var name = $("#door-name").text();
+                      var time = $("#door-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#door-amount3").click(function(){
-                        var amount = $("#door-amount3").text();
+                    $("#door-amount2").click(function(){
+                      var amount = $("#door-amount2").text();
 
-                        var name = $("#door-name").text();
-                        var time = $("#door-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                      var name = $("#door-name").text();
+                      var time = $("#door-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#door-amount4").click(function(){
-                        var amount = $("#door-amount4").text();
+                    $("#door-amount3").click(function(){
+                      var amount = $("#door-amount3").text();
 
-                        var name = $("#door-name").text();
-                        var time = $("#door-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                      var name = $("#door-name").text();
+                      var time = $("#door-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#door-amount5").click(function(){
-                        var amount = $("#door-amount5").text();
+                    $("#door-amount4").click(function(){
+                      var amount = $("#door-amount4").text();
 
-                        var name = $("#door-name").text();
-                        var time = $("#door-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                      var name = $("#door-name").text();
+                      var time = $("#door-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#drop-amount1").click(function(){
-                        var amount = $("#drop-amount1").text();
-                        var name = $("#drop-name").text();
-                        var time = $("#drop-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                    $("#door-amount5").click(function(){
+                      var amount = $("#door-amount5").text();
+
+                      var name = $("#door-name").text();
+                      var time = $("#door-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#drop-amount2").click(function(){
-                        var amount = $("#drop-amount2").text();
-
-                        var name = $("#drop-name").text();
-                        var time = $("#drop-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                    $("#drop-amount1").click(function(){
+                      var amount = $("#drop-amount1").text();
+                      var name = $("#drop-name").text();
+                      var time = $("#drop-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#drop-amount3").click(function(){
-                        var amount = $("#drop-amount3").text();
+                    $("#drop-amount2").click(function(){
+                      var amount = $("#drop-amount2").text();
 
-                        var name = $("#drop-name").text();
-                        var time = $("#drop-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                      var name = $("#drop-name").text();
+                      var time = $("#drop-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#drop-amount4").click(function(){
-                        var amount = $("#drop-amount4").text();
+                    $("#drop-amount3").click(function(){
+                      var amount = $("#drop-amount3").text();
 
-                        var name = $("#drop-name").text();
-                        var time = $("#drop-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                      var name = $("#drop-name").text();
+                      var time = $("#drop-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#drop-amount5").click(function(){
-                        var amount = $("#drop-amount5").text();
+                    $("#drop-amount4").click(function(){
+                      var amount = $("#drop-amount4").text();
 
-                        var name = $("#drop-name").text();
-                        var time = $("#drop-time").text();
-                        var to = $("#to").text();
-                        var from = $("#from").text();
-                        var weight = $("#weight").text();
+                      var name = $("#drop-name").text();
+                      var time = $("#drop-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-                      
-                      jQuery.ajax({
-                        url: '{{ route('orders.serve') }}',
-                        method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
-                        success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
-                        },
-                        error: function(){
-                          alert('something went wrong');
-                        }
-                      });
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
                       });
 
-                      $("#movers").click(function(){
+                    $("#drop-amount5").click(function(){
+                      var amount = $("#drop-amount5").text();
+
+                      var name = $("#drop-name").text();
+                      var time = $("#drop-time").text();
+                      var to = $("#to").text();
+                      var from = $("#from").text();
+                      var weight = $("#weight").text();
+
+                        // console.log(amount+name+time);
+
+                        jQuery.ajax({
+                          url: '{{ route('orders.serve') }}',
+                          method: "POST",
+                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          success:function(data){
+                            window.location = "http://127.0.0.1:8000/service/"+data;
+                          },
+                          error: function(){
+                            alert('something went wrong');
+                          }
+                        });
+                      });
+
+                    $("#movers").click(function(){
                       var name = $("#movers-name").text();
                       var amount = $("#movers-amount").text();
                       var time = $("#movers-time").text();
@@ -768,9 +818,9 @@
                         }
                       });
 
-                      });
+                    });
 
-                      $("#dedicated").click(function(){
+                    $("#dedicated").click(function(){
                       var name = $("#dedicated-name").text();
                       var amount = $("#dedicated-amount").text();
                       var time = $("#dedicated-time").text();
@@ -789,9 +839,9 @@
                         }
                       });
 
-                      });
+                    });
 
-                      $("#good").click(function(){
+                    $("#good").click(function(){
                       var name = $("#good-name").text();
                       var amount = $("#good-amount").text();
                       var time = $("#good-time").text();
@@ -810,9 +860,9 @@
                         }
                       });
 
-                      });
+                    });
 
-                      $("#delivery").click(function(){
+                    $("#delivery").click(function(){
                       var name = $("#delivery-name").text();
                       var amount = $("#delivery-amount").text();
                       var time = $("#delivery-time").text();
@@ -831,9 +881,9 @@
                         }
                       });
 
-                      });
+                    });
 
-                      $("#pick").click(function(){
+                    $("#pick").click(function(){
                       var name = $("#pick-name").text();
                       var amount = $("#pick-amount").text();
                       var time = $("#pick-time").text();
@@ -852,8 +902,8 @@
                         }
                       });
 
-                      });
-                    </script>
+                    });
+                  </script>
 
                   <script>
                     $(document).ready(function() {
@@ -863,9 +913,9 @@
 
                     });
                   </script>
-               </body>
+                </body>
 
-               @yield('scripts')
+                @yield('scripts')
        {{--  <div class="row collapse" id="collapse1">
           <div class="col-md-12">
             <div class="card">

@@ -70,7 +70,7 @@ return [
             'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE', 'volant'),
             'username' => env('DB_USERNAME', 'postgres'),
-            'password' => env('DB_PASSWORD', 'postgres'),
+            'password' => env('DB_PASSWORD', 'hQAiwcIoMwFtUbhSCKbq'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
