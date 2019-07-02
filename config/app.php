@@ -163,7 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        FarhanWazir\GoogleMaps\GMapsServiceProvider::class,
+        // FarhanWazir\GoogleMaps\GMapsServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -230,7 +230,7 @@ return [
         'Form' => Collecctive\Html\HtmlServiceProvider::class,
         'Html' => Collecctive\Html\HtmlFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'GMaps' => FarhanWazir\GoogleMaps\Facades\GMapsFacade::class,
+        // 'GMaps' => FarhanWazir\GoogleMaps\Facades\GMapsFacade::class,
         'Cart' => bumbummen99\Shoppingcart\Facades\Cart::class,
 
     ],
