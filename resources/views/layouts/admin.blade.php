@@ -49,11 +49,11 @@
                         <!-- Authentication Links -->
                         @if(Auth::guard('admin')->check() == false)
                             <li class="nav-item">
-                                <a class="nav-link" style="color: #fff;" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" style="color: #fff;" href="{{ route('admins') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" style="color: #fff;" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" style="color: #fff;" href="{{ route('register_admin') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
