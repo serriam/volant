@@ -45,7 +45,7 @@
                                     </a>
                                     <!-- end link apple store -->
                                     <!-- order online -->
-                                    <a href="#" class="btn btn-lg btn-github btn-icon mb-3 mb-sm-0" target="_blank">
+                                    <a href="/home" class="btn btn-lg btn-github btn-icon mb-3 mb-sm-0" target="_blank">
                                         <span class="btn-inner--icon"><i class="fa fa-map-marker"></i></span>
                                         <span class="btn-inner--text">
                                      <span class="text-default"></span> click to request delivery</span>

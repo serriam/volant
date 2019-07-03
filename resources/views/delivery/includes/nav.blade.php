@@ -88,7 +88,7 @@
                                 <span class="nav-link-inner--text d-lg-none">Twitter</span>
                             </a>
                         </li>
-                        <li class="nav-item d-none d-lg-block ml-lg-4">
+                        <li class="nav-item">
                             <a href="/login" class="btn btn-neutral btn-icon">
                                 <span class="btn-inner--icon">
                                      <i class="fa fa-user-circle-o mr-2"></i>
