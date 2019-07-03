@@ -131,53 +131,63 @@
                       })
                         .then((willDelete) => {
                           if (willDelete) {
-                           jQuery.ajax({
-                            url:'{{ route('orders.deleteorder') }}',
-                            method:"POST",
-                            data:{id: id, _token: '{{csrf_token()}}'},
-                            success:function(result)
-                            {
-                             swal(result, "has been deleted!", {
-                              icon: "success",
-                          }).then(function(){ 
-                             location.reload();
-                         }
-                         );
-                      },
-                      error : function(){alert("Something Went Wrong.");},
-                  });
-                       } else {
-                        swal("Order is safe!").then(function(){ 
-                         location.reload();
-                     }
-                     );
-                    }
-                });
+                             jQuery.ajax({
+                                url:'{{ route('orders.deleteorder') }}',
+                                method:"POST",
+                                data:{id: id, _token: '{{csrf_token()}}'},
+                                success:function(result)
+                                {
+                                   swal(result, "has been deleted!", {
+                                      icon: "success",
+                                  }).then(function(){ 
+                                   location.reload();
+                               }
+                               );
+                              },
+                              error : function(){alert("Something Went Wrong.");},
+                          });
+                         } else {
+                            swal("Order is safe!").then(function(){ 
+                               location.reload();
+                           }
+                           );
+                        }
+                    });
                     }
 
                 // swal(result, "has been confirmed successfully!", "success")
 
             </script>
 
-@push('js')
-<script src="assets2/vendor/chart.js/dist/Chart.min.js"></script>
-<script src="assets2/vendor/chart.js/dist/Chart.extension.js"></script>
-@endpush
-</div>
+            <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+            <script>
+              var OneSignal = window.OneSignal || [];
+              OneSignal.push(function() {
+                OneSignal.init({
+                  appId: "e4cda120-72b2-433a-9b6b-be1e8ef48024",
+              });
+            });
+        </script>
 
-@guest()
-@include('layouts.footers.guest')
-@endguest
+        @push('js')
+        <script src="assets2/vendor/chart.js/dist/Chart.min.js"></script>
+        <script src="assets2/vendor/chart.js/dist/Chart.extension.js"></script>
+        @endpush
+    </div>
 
-<script src="assets2/vendor/jquery/dist/jquery.min.js"></script>
-<script src="assets2/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @guest()
+    @include('layouts.footers.guest')
+    @endguest
 
-@stack('js')
+    <script src="assets2/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets2/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Argon JS -->
-<script src="assets2/js/argon.js?v=1.0.0"></script>
+    @stack('js')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-{{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    <!-- Argon JS -->
+    <script src="assets2/js/argon.js?v=1.0.0"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 </body>
 </html>
