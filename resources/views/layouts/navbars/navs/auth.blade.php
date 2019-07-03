@@ -31,11 +31,11 @@
                     <div class=" dropdown-header noti-title">
                         <h6 class="text-overflow m-0">{{ __('Welcome!') }}</h6>
                     </div>
-                    <a href="#" class="dropdown-item">
-                        @foreach($orderm as $orders)
-                            <span>{{ $orders->email }} -> {{ $orders->package }}</span>
-                        @endforeach
+                    @foreach($orderm as $orders)
+                    <a href="#" class="dropdown-item">      
+                            <span>{{ $orders->email }} -> {{ $orders->package }}</span> 
                     </a>
+                    @endforeach
                 </div>
 
             <li class="nav-item dropdown">

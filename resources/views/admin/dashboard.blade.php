@@ -131,28 +131,28 @@
                       })
                         .then((willDelete) => {
                           if (willDelete) {
-                             jQuery.ajax({
-                                url:'{{ route('orders.deleteorder') }}',
-                                method:"POST",
-                                data:{id: id, _token: '{{csrf_token()}}'},
-                                success:function(result)
-                                {
-                                   swal(result, "has been deleted!", {
-                                      icon: "success",
-                                  }).then(function(){ 
-                                   location.reload();
-                               }
-                               );
-                              },
-                              error : function(){alert("Something Went Wrong.");},
-                          });
-                         } else {
-                            swal("Order is safe!").then(function(){ 
-                               location.reload();
-                           }
-                           );
-                        }
-                    });
+                           jQuery.ajax({
+                            url:'{{ route('orders.deleteorder') }}',
+                            method:"POST",
+                            data:{id: id, _token: '{{csrf_token()}}'},
+                            success:function(result)
+                            {
+                             swal(result, "has been deleted!", {
+                              icon: "success",
+                          }).then(function(){ 
+                             location.reload();
+                         }
+                         );
+                      },
+                      error : function(){alert("Something Went Wrong.");},
+                  });
+                       } else {
+                        swal("Order is safe!").then(function(){ 
+                         location.reload();
+                     }
+                     );
+                    }
+                });
                     }
 
                 // swal(result, "has been confirmed successfully!", "success")
