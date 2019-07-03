@@ -232,7 +232,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -254,7 +254,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -276,7 +276,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -298,7 +298,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -320,7 +320,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -342,7 +342,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -364,7 +364,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/services/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/services/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -386,7 +386,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -414,7 +414,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -439,7 +439,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -464,7 +464,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -489,7 +489,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -514,7 +514,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -538,7 +538,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -563,7 +563,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -588,7 +588,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -612,7 +612,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -637,7 +637,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -660,7 +660,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -684,7 +684,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -708,7 +708,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -732,7 +732,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -757,7 +757,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -778,7 +778,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -800,7 +800,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -822,7 +822,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -844,7 +844,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -866,7 +866,7 @@
                         method: "POST",
                         data: {id: id, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://salty-coast-40585.herokuapp.com/service2/"+data;
+                          window.location = "http://volant-couriers.herokuapp.com/service2/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
