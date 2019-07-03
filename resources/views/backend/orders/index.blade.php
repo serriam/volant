@@ -150,14 +150,6 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          {{-- <?php 
-          $now = date("Y-m-d H:m:s");
-          $hours = '5 hours';
-          $new_time = date("Y-m-d H:i:s", strtotime(sprintf("+%d hours", $hours)));
-
-          var_dump($now);
-          ?> --}}
-          {{-- <p id="time" style="display: hidden;"><?= $new_time ?></p> --}}
           <div id="demo"></div>
           <h4 class="card-title"> My Orders </h4>
           <a href="{{ route('orders.create') }}" class="btn btn-info pull-right" >Create Order</a>
