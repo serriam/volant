@@ -283,7 +283,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -304,7 +304,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -325,7 +325,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -346,7 +346,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -367,7 +367,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -388,7 +388,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -409,7 +409,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -430,7 +430,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -457,7 +457,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -481,7 +481,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -505,7 +505,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -529,7 +529,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -553,7 +553,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -576,7 +576,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -600,7 +600,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -624,7 +624,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -648,7 +648,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -672,7 +672,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -695,7 +695,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -719,7 +719,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -743,7 +743,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -767,7 +767,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -791,7 +791,7 @@
                           method: "POST",
                           data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
-                            window.location = "http://127.0.0.1:8000/service/"+data;
+                            window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                           },
                           error: function(){
                             alert('something went wrong');
@@ -811,7 +811,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -832,7 +832,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -853,7 +853,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -874,7 +874,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
@@ -895,7 +895,7 @@
                         method: "POST",
                         data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
-                          window.location = "http://127.0.0.1:8000/service/"+data;
+                          window.location = "http://salty-coast-40585.herokuapp.com/service/"+data;
                         },
                         error: function(){
                           alert('something went wrong');
