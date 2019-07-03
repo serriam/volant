@@ -169,6 +169,7 @@
               </thead>
               <tbody style="font-size:12px;">
                 @foreach($order as $orders)
+                @if($orders->email == Auth::user()->email)
                 <tr>
                   <td>{{ $orders->to }}</td>
                   <td>{{ $orders->from }}</td>
@@ -185,6 +186,7 @@
                   </td>
 
                 </tr>
+                @endif
                 @endforeach
               </tbody>
             </table>

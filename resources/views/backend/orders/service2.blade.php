@@ -173,7 +173,7 @@
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" required name="email" class="form-control" placeholder="Email" >
+                        <input type="email" readonly value="{{ Auth::user()->email }}" required name="email" class="form-control" placeholder="Email" >
                       </div>
                     </div>
                   </div>
