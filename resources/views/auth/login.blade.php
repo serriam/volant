@@ -13,14 +13,14 @@
                 <div class="text-muted text-center mb-3">
                   <h3> login in</h3>
                 </div>
-                {{-- <div class="btn-wrapper text-center">
+                <div class="btn-wrapper text-center">
                   <a href="{{ url('auth/google') }}" class="btn btn-neutral btn-icon">
                     <span class="btn-inner--icon">
                       <img src="assets/img/icons/common/google.svg">
                     </span>
-                    <span class="btn-inner--text">Google</span>
+                    <span class="btn-inner--text">| with Google</span>
                   </a>
-                </div> --}}
+                </div>
               </div>
               <div class="card-body px-lg-5 py-lg-5">
                 <div class="text-center text-muted mb-4">
