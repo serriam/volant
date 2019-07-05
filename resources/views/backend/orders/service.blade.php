@@ -182,7 +182,7 @@
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="Instructions">Further Instructions</label>
-                        <textarea class="form-control" required name="instruct" placeholder="Further Instructions"></textarea>
+                        <textarea class="form-control" required name="instruct" placeholder="Building, House No."></textarea>
                       </div>
                     </div>
                   </div>

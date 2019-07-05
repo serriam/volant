@@ -48,8 +48,8 @@
                         <input id="email" type="email" placeholder="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                    <span class="invalid-feedback" class="alert alert-danger" role="alert">
+                                        <strong>Invalid Email</strong>
                                     </span>
                                 @enderror
                     </div>
@@ -64,7 +64,22 @@
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>Invalid Password</strong>
+                                    </span>
+                                @enderror
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"></span>
+                      </div>
+                        <input id="phone" type="phone" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="phone number" required>
+
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>Invalid Phone number</strong>
                                     </span>
                                 @enderror
                     </div>
