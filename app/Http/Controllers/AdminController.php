@@ -29,11 +29,12 @@ class AdminController extends Controller
         $orderm = orders::orderBy('id', 'desc')->where('mark', '=', 0)->get();
         $ordercount = orders::orderBy('id', 'desc')->count();
         $usercount = User::orderBy('id', 'desc')->count();
+        $user = User::get();
         $ncount = orders::where('mark', '=', 0)->get()->count();
 
         
 
-        return view('admin.dashboard')->withorder($order)->withordercount($ordercount)->withusercount($usercount)->withncount($ncount)->withorderm($orderm);
+        return view('admin.dashboard')->withorder($order)->withordercount($ordercount)->withusercount($usercount)->withncount($ncount)->withorderm($orderm)->withuser($user);
     }
 
     public function latest()

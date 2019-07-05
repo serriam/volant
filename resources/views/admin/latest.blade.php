@@ -62,7 +62,7 @@
                                         <thead class="thead-light">
                                             <tr>
                                                 <th scope="col">email</th>
-                                                <th scope="col">phone No.</th>
+                                               
                                                 <th scope="col">to</th>
                                                 <th scope="col">from</th>
                                                 <th scope="col">package</th>
@@ -78,9 +78,7 @@
                                                 <th scope="row">
                                                     {{ $orders->email }}
                                                 </th>
-                                                <th scope="row">
-                                                    {{ $orders->phone }}
-                                                </th>
+                                               
                                                 <th scope="row">
                                                     {{ $orders->to }}
                                                 </th>
