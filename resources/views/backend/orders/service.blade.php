@@ -176,6 +176,12 @@
                         <input type="email" readonly value="{{ Auth::user()->email }}" required name="email" class="form-control" placeholder="Email" >
                       </div>
                     </div>
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="text" value="{{ Auth::user()->phone }}" required name="phone" class="form-control" placeholder="Phone No." >
+                      </div>
+                    </div>
                   </div>
 
                   <div class="row">

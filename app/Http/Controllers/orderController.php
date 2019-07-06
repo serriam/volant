@@ -186,6 +186,7 @@ class orderController extends Controller
         $order->mark = 0;
         $order->cancel = 0;
         $order->email = $request->email;
+        $order->phone = $request->phone;
 
         $edit_info = "";
        
@@ -249,6 +250,7 @@ class orderController extends Controller
         $order->instruct = $request->instruct;
         $order->mark = 0;
         $order->email = $request->email;
+        $order->phone = $request->phone;
 
         $edit_info = "You have successfully Edited this order";
        
@@ -267,7 +269,7 @@ class orderController extends Controller
 
         // dd($data);
 
-        $user = User::first();
+        $user = Admins::first();
   
         $details = [
             'greeting' => 'Hi Admin',
