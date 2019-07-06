@@ -146,58 +146,199 @@
    </div>
  </div>
  <div class="content">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <div id="demo"></div>
-          <h4 class="card-title"> My Orders </h4>
-          <a href="{{ route('orders.create') }}" class="btn btn-info pull-right" >Create Order</a>
+
+   <div class="card">
+    <div class="card-body reveal" id="reveal">
+      <div class="mb-5">
+        <div class="row">
+          <div class="col-md-6">
+            <h4 class="card-title"> My Orders </h4>
+          </div>
+          <div class="col-md-6">
+           <a href="{{ route('orders.create') }}" class="btn btn-info pull-right" >Create Order</a>
+         </div>
+       </div>
+       {{-- <div id="demo"></div> --}}
+
+
+     </div>
+     <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <!-- tabs here each with different package description -->
+        <div class="nav-wrapper">
+          <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-building mr-2"></i>In Progress</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-bus-front-12 mr-2"></i>Complete</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i class="ni ni-delivery-fast mr-2"></i>Cancelled</a>
+            </li>
+          </ul>
         </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table">
-              <thead class="text-primary" style="font-size: 12px;" >
-                <th>To:</th>
-                <th>From:</th>
-                <th>Package</th>
-                <th>Amount</th>
-                <th>Time</th>
-                <th>Instructions</th>
-                <th>Edit</th>
-                <th>Delete</th>
-              </thead>
-              <tbody style="font-size:12px;">
-                @foreach($order as $orders)
-                @if($orders->email == Auth::user()->email)
-                <tr>
-                  <td>{{ $orders->to }}</td>
-                  <td>{{ $orders->from }}</td>
-                  <td>{{ $orders->package }}</td>
-                  <td>{{ $orders->info }}</td>
-                  <td>{{ $orders->time }}</td>
-                  <td>{{ $orders->instruct }}</td>
-                  <td>
-                    <a href="{{ route('orders.edit', $orders->id) }}" class="btn btn-sm btn-info">Edit</a>
-                  </td>
+        <div class="card ">
 
-                  <td>
-                    <button onclick="deleteorder2({{ $orders->id }})" class="btn btn-sm btn-danger">Delete</button>
-                  </td>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+              <div class="container table-responsive">
+                <div class="row justify-content">
 
-                </tr>
-                @endif
-                @endforeach
-              </tbody>
-            </table>
-            <div class="text-center">
-              {!! $order->links(); !!}
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead class="text-primary" style="font-size: 12px;" >
+                          <th>To:</th>
+                          <th>From:</th>
+                          <th>Package</th>
+                          <th>Amount</th>
+                          <th>Time</th>
+                          <th>Instructions</th>
+                          <th>Edit</th>
+                          <th>Cancel</th>
+                          <th>Delete</th>
+                        </thead>
+                        <tbody style="font-size:12px;">
+                          @foreach($order as $orders)
+                          @if($orders->email == Auth::user()->email && $orders->cancel == 0 && $orders->mark == 0)
+                          <tr>
+                            <td>{{ $orders->to }}</td>
+                            <td>{{ $orders->from }}</td>
+                            <td>{{ $orders->package }}</td>
+                            <td>{{ $orders->info }}</td>
+                            <td>{{ $orders->time }}</td>
+                            <td>{{ $orders->instruct }}</td>
+                            <td>
+                              <a href="{{ route('orders.edit', $orders->id) }}" class="btn btn-sm btn-info">Edit</a>
+                            </td>
+
+                            <td>
+                              <button onclick="cancelorder({{ $orders->id }})" class="btn btn-sm btn-warning">Cancel</button>
+                            </td>
+
+                            <td>
+                              <button onclick="deleteorder2({{ $orders->id }})" class="btn btn-sm btn-danger">Delete</button>
+                            </td>
+
+                          </tr>
+                          @endif
+                          @endforeach
+                        </tbody>
+                      </table>
+                      <div class="text-center">
+                        {!! $order->links(); !!}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
+              <!-- content upcountry packages here explained with link to make order -->
+
+              <div class="container table-responsive">
+                <div class="row justify-content">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead class="text-primary" style="font-size: 12px;" >
+                          <th>To:</th>
+                          <th>From:</th>
+                          <th>Package</th>
+                          <th>Amount</th>
+                          <th>Time</th>
+                          <th>Instructions</th>
+                          <th>Delete</th>
+                        </thead>
+                        <tbody style="font-size:12px;">
+                          @foreach($order as $orders)
+                          @if($orders->email == Auth::user()->email && $orders->cancel == 0 && $orders->mark == 1)
+                          <tr>
+                            <td>{{ $orders->to }}</td>
+                            <td>{{ $orders->from }}</td>
+                            <td>{{ $orders->package }}</td>
+                            <td>{{ $orders->info }}</td>
+                            <td>{{ $orders->time }}</td>
+                            <td>{{ $orders->instruct }}</td>
+
+                            <td>
+                              <button onclick="deleteorder2({{ $orders->id }})" class="btn btn-sm btn-danger">Delete</button>
+                            </td>
+
+                          </tr>
+                          @endif
+                          @endforeach
+                        </tbody>
+                      </table>
+                      <div class="text-center">
+                        {!! $order->links(); !!}
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <!-- end upcountry packages -->
+            </div>
+            <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
+              <!-- special packages here explained with link to make order -->
+
+              <div class="container table-responsive">
+                <div class="row justify-content">
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead class="text-primary" style="font-size: 12px;" >
+                          <th>To:</th>
+                          <th>From:</th>
+                          <th>Package</th>
+                          <th>Amount</th>
+                          <th>Time</th>
+                          <th>Instructions</th>
+                          <th>Delete</th>
+                        </thead>
+                        <tbody style="font-size:12px;">
+                          @foreach($order as $orders)
+                          @if($orders->email == Auth::user()->email && $orders->cancel == 1)
+                          <tr>
+                            <td>{{ $orders->to }}</td>
+                            <td>{{ $orders->from }}</td>
+                            <td>{{ $orders->package }}</td>
+                            <td>{{ $orders->info }}</td>
+                            <td>{{ $orders->time }}</td>
+                            <td>{{ $orders->instruct }}</td>
+
+                            <td>
+                              <button onclick="deleteorder2({{ $orders->id }})" class="btn btn-sm btn-danger">Delete</button>
+                            </td>
+
+                          </tr>
+                          @endif
+                          @endforeach
+                        </tbody>
+                      </table>
+                      <div class="text-center">
+                        {!! $order->links(); !!}
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <!-- end special packages -->
             </div>
           </div>
+
         </div>
+        <!-- end of packages tabs -->
       </div>
     </div>
   </div>
+</div>
+
 </div>
 
 
@@ -245,5 +386,43 @@
                 // swal(result, "has been confirmed successfully!", "success")
 
               </script>
+
+              <script>
+               function cancelorder(id){
+                var id = id;
+
+                swal({
+                  title: "Are you sure?",
+                  text: "Once canceled, you will not be able to uncancel this order!",
+                  icon: "warning",
+                  buttons: true,
+                  dangerMode: true,
+                })
+                .then((willDelete) => {
+                  if (willDelete) {
+                   jQuery.ajax({
+                    url:'{{ route('orders.cancelorder') }}',
+                    method:"POST",
+                    data:{id: id, _token: '{{csrf_token()}}'},
+                    success:function(result)
+                    {
+                     swal(result, "has been canceled!", {
+                      icon: "success",
+                    }).then(function(){ 
+                     location.reload();
+                   }
+                   );
+                  },
+                  error : function(){alert("Something Went Wrong.");},
+                });
+                 } else {
+                  swal("Order is safe!").then(function(){ 
+                   location.reload();
+                 }
+                 );
+                }
+              });
+              }
+            </script>
 
               @endsection

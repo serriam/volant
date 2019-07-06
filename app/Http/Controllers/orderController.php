@@ -7,6 +7,7 @@ use App\Mail\GmailSend;
 use Illuminate\Support\Facades\Mail;
 use App\orders;
 use App\User;
+use App\Admins;
 use Session;
 use Storage;
 use Notification;
@@ -183,11 +184,12 @@ class orderController extends Controller
         
         $order->instruct = $request->instruct;
         $order->mark = 0;
+        $order->cancel = 0;
         $order->email = $request->email;
 
         $edit_info = "";
        
-        Mail::to($request->email)->send(new GmailSend($order->package, $order->time, $order->info, $edit_info));
+        // Mail::to($request->email)->send(new GmailSend($order->package, $order->time, $order->info, $edit_info));
 
         $data = array( 
             'id' => $order->id,
@@ -202,7 +204,7 @@ class orderController extends Controller
 
         // dd($data);
 
-        $user = User::first();
+        $user = Admins::first();
   
         $details = [
             'greeting' => 'Hi Admin',
@@ -222,7 +224,7 @@ class orderController extends Controller
         print($return);
         print("\n");
   
-        Notification::send($user, new adminNotification($details));
+        // Notification::send($user, new adminNotification($details));
 
         $order->save();
 
@@ -321,6 +323,20 @@ class orderController extends Controller
         $order = orders::find($request->id);
 
         $order->delete();
+
+        return $order->package;
+    }
+    
+    public function cancelorder(Request $request){
+        $order = orders::find($request->id);
+
+        $order->cancel = 1;
+
+        // $cancelinfo = 'Your Order has been unfortunately canceled';
+
+        // Mail::to('morrisonmburu7@gmail.com')->send(new GmailSend($order->package, $order->time, $order->info, $cancelinfo));
+
+        $order->save();
 
         return $order->package;
     }

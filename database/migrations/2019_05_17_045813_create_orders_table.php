@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('info');
             $table->string('time');
             $table->integer('mark')->nullable();
+            $table->integer('cancel')->nullable();
             $table->string('email')->nullable();
             $table->string('instruct')->nullable();
            

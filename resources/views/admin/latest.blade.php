@@ -62,7 +62,7 @@
                                         <thead class="thead-light">
                                             <tr>
                                                 <th scope="col">email</th>
-                                               
+
                                                 <th scope="col">to</th>
                                                 <th scope="col">from</th>
                                                 <th scope="col">package</th>
@@ -74,11 +74,12 @@
                                         </thead>
                                         <tbody>
                                             @foreach($orderm as $orders)
+                                            @if($orders->mark == 0 && $orders->cancel == 0)
                                             <tr>
                                                 <th scope="row">
                                                     {{ $orders->email }}
                                                 </th>
-                                               
+
                                                 <th scope="row">
                                                     {{ $orders->to }}
                                                 </th>
@@ -98,9 +99,12 @@
                                                     {{ $orders->instruct }}
                                                 </td>
                                                 <td>
-                                                    <button onclick="confirm({{ $orders->id }})" class="btn btn-sm btn-success" >Confirm</button>
+                                                    <button onclick="confirm({{ $orders->id }})" class="btn btn-sm btn-success" >Complete</button>
+
+                                                    <button onclick="cancelorder({{ $orders->id }})" class="btn btn-sm btn-danger" >Cancel</button>
                                                 </td>
                                             </tr>
+                                            @endif
                                             @endforeach
                                         </tbody>
                                     </table>
@@ -126,9 +130,9 @@
                         success:function(result)
                         {
                             swal(result, "has been confirmed successfully!", "success").then(function(){ 
-                             location.reload();
-                         }
-                         );
+                               location.reload();
+                           }
+                           );
                         },
                         error : function(){alert("Something Went Wrong.");},
                     });
@@ -136,24 +140,62 @@
 
             </script>
 
-            @push('js')
-            <script src="assets2/vendor/chart.js/dist/Chart.min.js"></script>
-            <script src="assets2/vendor/chart.js/dist/Chart.extension.js"></script>
-            @endpush
-        </div>
+            <script>
+               function cancelorder(id){
+                var id = id;
 
-        @guest()
-        @include('layouts.footers.guest')
-        @endguest
+                swal({
+                  title: "Are you sure?",
+                  text: "Once canceled, you will not be able to uncancel this order!",
+                  icon: "warning",
+                  buttons: true,
+                  dangerMode: true,
+              })
+                .then((willDelete) => {
+                  if (willDelete) {
+                     jQuery.ajax({
+                        url:'{{ route('orders.cancelorder2') }}',
+                        method:"POST",
+                        data:{id: id, _token: '{{csrf_token()}}'},
+                        success:function(result)
+                        {
+                           swal(result, "has been canceled!", {
+                              icon: "success",
+                          }).then(function(){ 
+                           location.reload();
+                       }
+                       );
+                      },
+                      error : function(){alert("Something Went Wrong.");},
+                  });
+                 } else {
+                  swal("Order is safe!").then(function(){ 
+                     location.reload();
+                 }
+                 );
+              }
+          });
+            }
+        </script>
 
-        <script src="assets2/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="assets2/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        
-        @stack('js')
-        
-        <!-- Argon JS -->
-        <script src="assets2/js/argon.js?v=1.0.0"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-        {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
-    </body>
-    </html>
+        @push('js')
+        <script src="assets2/vendor/chart.js/dist/Chart.min.js"></script>
+        <script src="assets2/vendor/chart.js/dist/Chart.extension.js"></script>
+        @endpush
+    </div>
+
+    @guest()
+    @include('layouts.footers.guest')
+    @endguest
+
+    <script src="assets2/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="assets2/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @stack('js')
+
+    <!-- Argon JS -->
+    <script src="assets2/js/argon.js?v=1.0.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+</body>
+</html>

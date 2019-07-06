@@ -27,6 +27,8 @@ Route::group(['middleware' => ['web']], function(){
 	Route::get('/service2/{id}', 'orderController@serve2');
 	Route::post('/orders/update2/{id}', 'orderController@update2')->name('orders.update2');
 	Route::post('orders/deleteorder2', 'orderController@deleteorder2')->name('orders.deleteorder2');
+	Route::post('orders/cancelorder', 'orderController@cancelorder')->name('orders.cancelorder');
+	
 });
 
 Auth::routes();
@@ -35,6 +37,7 @@ Auth::routes();
 // Route::get('/push','PushController@push')->name('push');
 
 Route::post('orders/confirm', 'AdminController@confirm')->name('orders.confirm');
+Route::post('orders/cancelorder2', 'AdminController@cancelorder')->name('orders.cancelorder2');
 Route::post('orders/deleteorder', 'AdminController@deleteorder')->name('orders.deleteorder');
 
 Route::get('send', 'AdminController@sendNotification');

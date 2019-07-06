@@ -65,4 +65,14 @@ class AdminController extends Controller
 
         return $order->package;
     }
+
+      public function cancelorder(Request $request){
+        $order = orders::find($request->id);
+
+        $order->cancel = 1;
+
+        $order->save();
+
+        return $order->package;
+    }
 }
