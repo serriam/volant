@@ -190,7 +190,7 @@ class orderController extends Controller
 
         $edit_info = "";
        
-        // Mail::to($request->email)->send(new GmailSend($order->package, $order->time, $order->info, $edit_info));
+        Mail::to($request->email)->send(new GmailSend($order->package, $order->time, $order->info, $edit_info));
 
         $data = array( 
             'id' => $order->id,
@@ -225,7 +225,7 @@ class orderController extends Controller
         print($return);
         print("\n");
   
-        // Notification::send($user, new adminNotification($details));
+        Notification::send($user, new adminNotification($details));
 
         $order->save();
 
