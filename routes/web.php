@@ -19,6 +19,8 @@ Route::group(['middleware' => ['web']], function(){
 	
 
 	Route::resource('orders', 'orderController');
+	// Route::resource('order_rest', 'ordersrestController');
+	// Route::post('order_rest/store', 'orderController@store')->name('order_rest.store');
 
 	Route::post('orders/distance', 'orderController@distance')->name('orders.distance');
 	Route::post('orders/serve', 'orderController@service')->name('orders.serve');
@@ -28,6 +30,7 @@ Route::group(['middleware' => ['web']], function(){
 	Route::post('/orders/update2/{id}', 'orderController@update2')->name('orders.update2');
 	Route::post('orders/deleteorder2', 'orderController@deleteorder2')->name('orders.deleteorder2');
 	Route::post('orders/cancelorder', 'orderController@cancelorder')->name('orders.cancelorder');
+
 	
 });
 
