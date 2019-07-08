@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string('package');
             $table->string('info');
             $table->string('time');
+            // $table->string('countdown')->nullable();
             $table->integer('mark')->nullable();
             $table->integer('cancel')->nullable();
             $table->string('email')->nullable();

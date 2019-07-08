@@ -22,6 +22,7 @@ class GmailSend extends Mailable
     public $_time;
     public $_price;
     public $_edit_info;
+    // public $_countdown;
     // public $cancel_info;
 
     public function __construct($name, $time, $price, $edit_info)
@@ -30,6 +31,7 @@ class GmailSend extends Mailable
        $this->_time = $time;
        $this->_price = $price;
        $this->_edit_info = $edit_info;
+       // $this->_countdown = $countdown;
        // $this->cancel_info = $cancelinfo;
     }
     /**
@@ -50,6 +52,7 @@ class GmailSend extends Mailable
                 'time' =>  $this->_time,
                 'price' =>  $this->_price,
                 'edit_info' => $this->_edit_info,
+                // 'countdown' => $this->_countdown,
                 // 'cancelinfo' => $this->cancel_info,
                 'link' => 'http://www.volantcourier.com'
             ]);

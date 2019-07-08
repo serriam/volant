@@ -222,7 +222,7 @@
                       $("#skater").click(function(){
                       var name = $("#skater-name").text();
                       var amount = $("#skater-amount").text();
-                      var time = $("#skater-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -244,7 +244,7 @@
                       $("#express").click(function(){
                       var name = $("#express-name").text();
                       var amount = $("#express-amount").text();
-                      var time = $("#express-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -266,7 +266,7 @@
                       $("#pickup").click(function(){
                       var name = $("#pickup-name").text();
                       var amount = $("#pickup-amount").text();
-                      var time = $("#pickup-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -288,7 +288,7 @@
                       $("#van").click(function(){
                       var name = $("#van-name").text();
                       var amount = $("#van-amount").text();
-                      var time = $("#van-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -310,7 +310,7 @@
                       $("#3-Tonne").click(function(){
                       var name = $("#3-Tonne-name").text();
                       var amount = $("#3-Tonne-amount").text();
-                      var time = $("#3-Tonne-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -332,7 +332,7 @@
                       $("#5-Tonne").click(function(){
                       var name = $("#5-Tonne-name").text();
                       var amount = $("#5-Tonne-amount").text();
-                      var time = $("#5-Tonne-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -354,7 +354,7 @@
                       $("#10-Tonne").click(function(){
                       var name = $("#10-Tonne-name").text();
                       var amount = $("#10-Tonne-amount").text();
-                      var time = $("#10-Tonne-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -376,7 +376,7 @@
                       $("#28-Tonne").click(function(){
                       var name = $("#28-Tonne-name").text();
                       var amount = $("#28-Tonne-amount").text();
-                      var time = $("#28-Tonne-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -401,7 +401,7 @@
                       $("#medium-amount1").click(function(){
                         var amount = $("#medium-amount1").text();
                         var name = $("#medium-name").text();
-                        var time = $("#medium-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -426,7 +426,7 @@
                         var amount = $("#medium-amount2").text();
 
                         var name = $("#medium-name").text();
-                        var time = $("#medium-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -451,7 +451,7 @@
                         var amount = $("#medium-amount3").text();
 
                         var name = $("#medium-name").text();
-                        var time = $("#medium-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -476,7 +476,7 @@
                         var amount = $("#medium-amount4").text();
 
                         var name = $("#medium-name").text();
-                        var time = $("#medium-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -501,7 +501,7 @@
                         var amount = $("#medium-amount5").text();
 
                         var name = $("#medium-name").text();
-                        var time = $("#medium-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -525,7 +525,7 @@
                       $("#door-amount1").click(function(){
                         var amount = $("#door-amount1").text();
                         var name = $("#door-name").text();
-                        var time = $("#door-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -550,7 +550,7 @@
                         var amount = $("#door-amount2").text();
 
                         var name = $("#door-name").text();
-                        var time = $("#door-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -575,7 +575,7 @@
                         var amount = $("#door-amount3").text();
 
                         var name = $("#door-name").text();
-                        var time = $("#door-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -600,7 +600,7 @@
                         var amount = $("#door-amount4").text();
 
                         var name = $("#door-name").text();
-                        var time = $("#door-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -624,7 +624,7 @@
                         var amount = $("#door-amount5").text();
 
                         var name = $("#door-name").text();
-                        var time = $("#door-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -648,7 +648,7 @@
                       $("#drop-amount1").click(function(){
                         var amount = $("#drop-amount1").text();
                         var name = $("#drop-name").text();
-                        var time = $("#drop-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -672,7 +672,7 @@
                         var amount = $("#drop-amount2").text();
 
                         var name = $("#drop-name").text();
-                        var time = $("#drop-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -696,7 +696,7 @@
                         var amount = $("#drop-amount3").text();
 
                         var name = $("#drop-name").text();
-                        var time = $("#drop-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -720,7 +720,7 @@
                         var amount = $("#drop-amount4").text();
 
                         var name = $("#drop-name").text();
-                        var time = $("#drop-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -744,7 +744,7 @@
                         var amount = $("#drop-amount5").text();
 
                         var name = $("#drop-name").text();
-                        var time = $("#drop-time").text();
+                        var time = $("#duration_text").text();
                         var to = $("#to").text();
                         var from = $("#from").text();
                         var weight = $("#weight").text();
@@ -768,7 +768,7 @@
                       $("#movers").click(function(){
                       var name = $("#movers-name").text();
                       var amount = $("#movers-amount").text();
-                      var time = $("#movers-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -790,7 +790,7 @@
                       $("#dedicated").click(function(){
                       var name = $("#dedicated-name").text();
                       var amount = $("#dedicated-amount").text();
-                      var time = $("#dedicated-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -812,7 +812,7 @@
                       $("#good").click(function(){
                       var name = $("#good-name").text();
                       var amount = $("#good-amount").text();
-                      var time = $("#good-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -834,7 +834,7 @@
                       $("#delivery").click(function(){
                       var name = $("#delivery-name").text();
                       var amount = $("#delivery-amount").text();
-                      var time = $("#delivery-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();
@@ -856,7 +856,7 @@
                       $("#pick").click(function(){
                       var name = $("#pick-name").text();
                       var amount = $("#pick-amount").text();
-                      var time = $("#pick-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var id = $("#id").val();

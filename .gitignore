@@ -4,7 +4,7 @@
 /public/storage
 /storage/*.key
 /vendor
-.env
+# .env
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -25,7 +25,7 @@ public/hot
 storage/*.key
 .env.*.php
 .env.php
-.env
+# .env
 Homestead.yaml
 Homestead.json
 

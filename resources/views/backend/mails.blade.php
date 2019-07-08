@@ -4,8 +4,6 @@ Hi <b>{{$name}}</b>,
 
 {{ $edit_info }}
 
-{{-- {{ $cancelinfo }} --}}
-
 <style type="text/css">
 .card{position:relative;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;min-width:0;word-wrap:break-word;background-color:#fff;background-clip:border-box;border:1px solid rgba(0,0,0,.125);border-radius:.25rem}.card>hr{margin-right:0;margin-left:0}
 .card-body{-ms-flex:1 1 auto;flex:1 1 auto;padding:1.25rem}.card-title{margin-bottom:.75rem}
@@ -32,6 +30,11 @@ Hi <b>{{$name}}</b>,
 			<strong>Delivery Time:</strong>
 			<span id="express-time" class="badge badge-pill badge-warning">{{ $time }}</span>
 		</div>
+
+		{{-- <div>
+			<strong>Delivery Time:</strong>
+			<span id="demo" class="badge badge-pill badge-lg badge-warning">{{ $countdown }}</span>
+		</div> --}}
 
 	</div>
 </div>

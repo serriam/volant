@@ -251,13 +251,36 @@
                           $('#from').text(origin);
                           $('#to').text(destination);
 
-                          // var myTruncatedString = duration_value.substring(0, 4);
-                          // console.log(myTruncatedString);
+                          if(duration_text.length == 6){
+                            var myTruncatedString = duration_text.substring(0, 1);
+                            var myTruncatedString = duration_text.substring(0, 2);
+                            var dt = new Date();
+                            console.log(dt);
+                            document.write("Current Date: "+dt);
+                            dt.setHours(dt.getHours() + parseInt(myTruncatedString, 10));
 
-                          // var dt = new Date();
-                          // document.write("Current Date: "+dt);
-                          // dt.setHours(dt.getHours() + 2);
-                          // dt.setMinutes(dt.getMinutes() + 20);
+                            $('#time2').text(dt);
+                          }else if (duration_text.length == 7) {
+                            var myTruncatedString = duration_text.substring(0, 2);
+                            var dt = new Date();
+                            console.log(dt);
+                            document.write("Current Date: "+dt);
+                            dt.setMinutes(dt.getMinutes() + parseInt(myTruncatedString, 10));
+
+                            $('#time2').text(dt);
+                          }else if (duration_text.length == 15){
+                            var myTruncatedString1 = duration_text.substring(0, 1);
+                            var myTruncatedString2 = duration_text.substring(10, 8);
+
+                            var dt = new Date();
+                            console.log(dt);
+                            document.write("Current Date: "+dt);
+                            dt.setHours(dt.getHours() + parseInt(myTruncatedString1, 10));
+                            dt.setMinutes(dt.getMinutes() + parseInt(myTruncatedString2, 10));
+
+                            $('#time2').text(dt);
+                          }
+                          
 
                         }
                       }
@@ -274,14 +297,14 @@
                     $("#skater").click(function(){
                       var name = $("#skater-name").text();
                       var amount = $("#skater-amount").text();
-                      var time = $("#skater-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -295,14 +318,14 @@
                     $("#express").click(function(){
                       var name = $("#express-name").text();
                       var amount = $("#express-amount").text();
-                      var time = $("#express-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -316,14 +339,14 @@
                     $("#pickup").click(function(){
                       var name = $("#pickup-name").text();
                       var amount = $("#pickup-amount").text();
-                      var time = $("#pickup-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -337,14 +360,14 @@
                     $("#van").click(function(){
                       var name = $("#van-name").text();
                       var amount = $("#van-amount").text();
-                      var time = $("#van-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -358,14 +381,14 @@
                     $("#3-Tonne").click(function(){
                       var name = $("#3-Tonne-name").text();
                       var amount = $("#3-Tonne-amount").text();
-                      var time = $("#3-Tonne-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -379,14 +402,14 @@
                     $("#5-Tonne").click(function(){
                       var name = $("#5-Tonne-name").text();
                       var amount = $("#5-Tonne-amount").text();
-                      var time = $("#5-Tonne-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -400,14 +423,14 @@
                     $("#10-Tonne").click(function(){
                       var name = $("#10-Tonne-name").text();
                       var amount = $("#10-Tonne-amount").text();
-                      var time = $("#10-Tonne-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -421,14 +444,14 @@
                     $("#28-Tonne").click(function(){
                       var name = $("#28-Tonne-name").text();
                       var amount = $("#28-Tonne-amount").text();
-                      var time = $("#28-Tonne-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -445,17 +468,17 @@
                     $("#medium-amount1").click(function(){
                       var amount = $("#medium-amount1").text();
                       var name = $("#medium-name").text();
-                      var time = $("#medium-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -469,17 +492,17 @@
                       var amount = $("#medium-amount2").text();
 
                       var name = $("#medium-name").text();
-                      var time = $("#medium-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -493,17 +516,17 @@
                       var amount = $("#medium-amount3").text();
 
                       var name = $("#medium-name").text();
-                      var time = $("#medium-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -517,17 +540,17 @@
                       var amount = $("#medium-amount4").text();
 
                       var name = $("#medium-name").text();
-                      var time = $("#medium-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -541,17 +564,17 @@
                       var amount = $("#medium-amount5").text();
 
                       var name = $("#medium-name").text();
-                      var time = $("#medium-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -564,17 +587,17 @@
                     $("#door-amount1").click(function(){
                       var amount = $("#door-amount1").text();
                       var name = $("#door-name").text();
-                      var time = $("#door-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -588,17 +611,17 @@
                       var amount = $("#door-amount2").text();
 
                       var name = $("#door-name").text();
-                      var time = $("#door-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -612,17 +635,17 @@
                       var amount = $("#door-amount3").text();
 
                       var name = $("#door-name").text();
-                      var time = $("#door-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -636,17 +659,17 @@
                       var amount = $("#door-amount4").text();
 
                       var name = $("#door-name").text();
-                      var time = $("#door-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -660,17 +683,17 @@
                       var amount = $("#door-amount5").text();
 
                       var name = $("#door-name").text();
-                      var time = $("#door-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -683,17 +706,17 @@
                     $("#drop-amount1").click(function(){
                       var amount = $("#drop-amount1").text();
                       var name = $("#drop-name").text();
-                      var time = $("#drop-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -707,17 +730,17 @@
                       var amount = $("#drop-amount2").text();
 
                       var name = $("#drop-name").text();
-                      var time = $("#drop-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -731,17 +754,17 @@
                       var amount = $("#drop-amount3").text();
 
                       var name = $("#drop-name").text();
-                      var time = $("#drop-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -755,17 +778,17 @@
                       var amount = $("#drop-amount4").text();
 
                       var name = $("#drop-name").text();
-                      var time = $("#drop-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -779,17 +802,17 @@
                       var amount = $("#drop-amount5").text();
 
                       var name = $("#drop-name").text();
-                      var time = $("#drop-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
                       var weight = $("#weight").text();
 
                         // console.log(amount+name+time);
-
+                        var ctime = $('#time2').text();
                         jQuery.ajax({
                           url: '{{ route('orders.serve') }}',
                           method: "POST",
-                          data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                          data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                           success:function(data){
                             window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                           },
@@ -802,14 +825,14 @@
                     $("#movers").click(function(){
                       var name = $("#movers-name").text();
                       var amount = $("#movers-amount").text();
-                      var time = $("#movers-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -823,14 +846,14 @@
                     $("#dedicated").click(function(){
                       var name = $("#dedicated-name").text();
                       var amount = $("#dedicated-amount").text();
-                      var time = $("#dedicated-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -844,14 +867,14 @@
                     $("#good").click(function(){
                       var name = $("#good-name").text();
                       var amount = $("#good-amount").text();
-                      var time = $("#good-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -865,14 +888,14 @@
                     $("#delivery").click(function(){
                       var name = $("#delivery-name").text();
                       var amount = $("#delivery-amount").text();
-                      var time = $("#delivery-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -886,14 +909,14 @@
                     $("#pick").click(function(){
                       var name = $("#pick-name").text();
                       var amount = $("#pick-amount").text();
-                      var time = $("#pick-time").text();
+                      var time = $("#duration_text").text();
                       var to = $("#to").text();
                       var from = $("#from").text();
-                      
+                      var ctime = $('#time2').text();
                       jQuery.ajax({
                         url: '{{ route('orders.serve') }}',
                         method: "POST",
-                        data: {name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
+                        data: {ctime: ctime, name: name, amount: amount, time: time, to: to, from: from, _token: '{{csrf_token()}}'},
                         success:function(data){
                           window.location = "http://volant-couriers.herokuapp.com/service/"+data;
                         },
@@ -916,90 +939,3 @@
                 </body>
 
                 @yield('scripts')
-       {{--  <div class="row collapse" id="collapse1">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
-                Select Package
-              </div>
-              <div class="card-body">
-                <div id="load" class="animate-bottom"></div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <p>
-                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
-                              Volant Metro Package
-                            </a>
-                          </p>
-                          <div class="collapse" id="collapseExample1">
-                            <div class="card card-body">
-                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <a class="btn btn-primary" id="title" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
-                              Volant Upcountry Package
-                            </a>
-                          </p>
-                          <div class="collapse" id="collapseExample2">
-                            <div class="card card-body">
-                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
-                              Volant Special Package
-                            </a>
-                          </p>
-                          <div class="collapse" id="collapseExample3">
-                            <div class="card card-body">
-                              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                            </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">Continue</a>
-                  <div class="collapse" id="collapseExample4">
-                            <div class="card card-body">
-                              <div class="alert alert-default">Select one serve</div>
-                      
-                                              {{--   <div class="form-group">
-                                                  
-                                                  <select type="text" name="small" id="small" class="form-control" required>
-                                                    <option >1. Standard Bike 250</option>
-                                                    <option >2. express Bike 350</option>
-                                                  </select>
-                                                  <p style="color: red;" id="error"></p>
-                                                </div> --}}
-
-
-                                               {{--  <div class="form-group">
-                                                
-                                                  <select type="text" name="medium" id="medium" class="form-control" required>
-                                                    <option >1. pickup</option>
-                                                    <option >2. Van</option>
-                                                  </select>
-                                                  <p style="color: red;" id="errorf"></p>
-                                                </div> --}}
-
-
-                                                {{-- <div class="form-group">
-                                                 
-                                                  <input type="text" name="heavy" id="heavy" class="form-control" placeholder="Heavy" required>
-                                                  <p style="color: red;" id="errorf"></p>
-                                                </div> --}}

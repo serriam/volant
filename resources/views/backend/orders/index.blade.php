@@ -182,18 +182,19 @@
 
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
-              <div class="container table-responsive">
+              <div class="table-responsive">
                 <div class="row justify-content">
 
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="table">
                         <thead class="text-primary" style="font-size: 12px;" >
+
+                          
                           <th>To:</th>
                           <th>From:</th>
                           <th>Package</th>
-                          <th>Amount</th>
-                          <th>Time</th>
+                          {{-- <th>Time</th> --}}
                           <th>Instructions</th>
                           <th>Edit</th>
                           <th>Cancel</th>
@@ -201,14 +202,55 @@
                         </thead>
                         <tbody style="font-size:12px;">
                           @foreach($order as $orders)
+
                           @if($orders->email == Auth::user()->email && $orders->cancel == 0 && $orders->mark == 0)
                           <tr>
+                           
                             <td>{{ $orders->to }}</td>
                             <td>{{ $orders->from }}</td>
                             <td>{{ $orders->package }}</td>
-                            <td>{{ $orders->info }}</td>
-                            <td>{{ $orders->time }}</td>
+               {{--              <script type="text/javascript">
+
+                              var strDateTime = "{{ $orders->countdown }}";
+                              var myDate = new Date(strDateTime);
+                              var time1 = myDate.toLocaleString();
+
+                // Set the date we're counting down to
+                var countDownDate = new Date(time1).getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+
+                  // Get today's date and time
+                  var now = new Date().getTime();
+
+                  // Find the distance between now and the count down date
+                  var distance = countDownDate - now;
+
+                  // Time calculations for days, hours, minutes and seconds
+                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                  // Display the result in the element with id="demo"
+                  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                  + minutes + "m " + seconds + "s ";
+
+                  // If the count down is finished, write some text 
+                  if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                  }
+                }, 1000);
+
+              </script> --}}
+                            {{-- <td>
+                              <span id="demo" class="badge badge-warning"></span>
+                            </td> --}}
                             <td>{{ $orders->instruct }}</td>
+                        
+                          
                             <td>
                               <a href="{{ route('orders.edit', $orders->id) }}" class="btn btn-sm btn-info">Edit</a>
                             </td>
@@ -292,27 +334,22 @@
                     <div class="table-responsive">
                       <table class="table">
                         <thead class="text-primary" style="font-size: 12px;" >
+                          <th>#</th>
+                          <th>Contacts</th>
                           <th>To:</th>
                           <th>From:</th>
                           <th>Package</th>
-                          <th>Amount</th>
-                          <th>Time</th>
-                          <th>Instructions</th>
                           <th>Delete</th>
                         </thead>
                         <tbody style="font-size:12px;">
                           @foreach($order as $orders)
                           @if($orders->email == Auth::user()->email && $orders->cancel == 1)
                           <tr>
+                            <td>{{ $orders->email & $orders->phone }}</td>
                             <td>{{ $orders->to }}</td>
                             <td>{{ $orders->from }}</td>
                             <td>{{ $orders->package }}</td>
-                            <td>{{ $orders->info }}</td>
-                            <td>{{ $orders->time }}</td>
-                            <td>{{ $orders->instruct }}</td>
-
-                            <td>
-                              <button onclick="deleteorder2({{ $orders->id }})" class="btn btn-sm btn-danger">Delete</button>
+                            <button onclick="deleteorder2({{ $orders->id }})" class="btn btn-sm btn-danger">Delete</button>
                             </td>
 
                           </tr>

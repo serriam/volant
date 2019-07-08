@@ -32,7 +32,8 @@ class orderController extends Controller
     public function index()
     {
         $order = orders::orderBy('id', 'desc')->paginate(10);
-        return view('backend.orders.index')->withorder($order);
+        $orderc = orders::count();
+        return view('backend.orders.index')->withorder($order)->withorderc($orderc);
     }
 
     /**
@@ -48,6 +49,8 @@ class orderController extends Controller
     public function serve($id){
 
         $order = orders::find($id);
+
+        // dd($order);
         return view('backend.orders.service')->withorder($order);
     }
 
@@ -74,17 +77,9 @@ class orderController extends Controller
         $to = $request->get('to');
         $from = $request->get('from');
 
-        
-        // $count = strlen($amount);
+        // $ctime1 = $request->get('ctime');
 
-        // if ($count > 8) {
-            
-        // }else{
-        //     $newAmount = substr($amount, -3);
-
-        // }
-
-        // dd($newAmount);
+        // dd($ctime);
 
         $order = new orders;
 
@@ -93,6 +88,8 @@ class orderController extends Controller
         $order->package = $name;
         $order->info = $amount;
         $order->time = $time;
+        // $order->countdown = $ctime1;
+
 
         $order->save();
 
@@ -111,7 +108,7 @@ class orderController extends Controller
         $to = $request->get('to');
         $from = $request->get('from');
         $id = $request->get('id');
-        
+        // $ctime1 = $request->get('ctime');
         // $count = strlen($amount);
 
         // if ($count > 8) {
@@ -130,6 +127,7 @@ class orderController extends Controller
         $order->package = $name;
         $order->info = $amount;
         $order->time = $time;
+        // $order->countdown = $ctime1;
 
         $order->save();
 
@@ -172,9 +170,10 @@ class orderController extends Controller
     public function update(Request $request, $id)
     {
         
+
         $order = orders::find($id);
 
-              // dd($request);
+              // dd($order->countdown);
 
          $this->validate($request, array(
             'email' => 'required|max:255',
@@ -189,6 +188,7 @@ class orderController extends Controller
         $order->phone = $request->phone;
 
         $edit_info = "";
+        // $countdown = $order->countdown;
        
         Mail::to($request->email)->send(new GmailSend($order->package, $order->time, $order->info, $edit_info));
 

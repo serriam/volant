@@ -263,10 +263,8 @@
                   Time:
                   <span id="duration_text" style="color: #fff" class="badge badge-success badge-pill"></span>
                 </li>
-              {{--   <li class="list-group-item d-flex justify-content-between">
-                  In Minutes
-                  <span id="duration_value" style="color: #fff" class="badge badge-success badge-pill"></span>
-                </li> --}}
+                  <span id="time2" style="color: #fff; display: none;" class="badge badge-success badge-pill"></span>
+                
                 <li class="list-group-item d-flex justify-content-between">
                   From :
                   <span id="from" style="color: #fff" class="badge badge-success badge-pill"></span>
